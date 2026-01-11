@@ -98,6 +98,7 @@ For information about the security implementation and features, see [SECURITY_DE
 - [User Guide](USER_GUIDE.md)
 - [Database](docs/DATABASE.md)
 - [Native Image Build](docs/NATIVE_IMAGE_BUILD.md)
+- [Other documentation](docs)
 
 ## Running the Application
 
