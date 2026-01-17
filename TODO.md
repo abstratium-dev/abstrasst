@@ -1,5 +1,6 @@
 # TODO
 
+TODOs to be resolved by the developer, NOT THE LLM.
 
 ## Today
 
