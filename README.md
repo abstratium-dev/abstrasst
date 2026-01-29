@@ -31,7 +31,7 @@ Create a new empty repository on your Git server.
 Clone Abstracore and point it to your new origin:
 
 ```bash
-git clone https://github.com/your-org/abstracore.git your-new-project
+git clone https://github.com/abstratium-dev/abstracore.git your-new-project
 cd your-new-project
 git remote rename origin upstream
 git remote add origin git@github.com:your-org/your-new-project.git
