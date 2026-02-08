@@ -2,6 +2,8 @@
 
 This document describes how to build the component as a native executable using Docker with Mandrel, without requiring GraalVM or Mandrel to be installed on your local Ubuntu system.
 
+Commit everything to git.
+
 ```bash
 ./build-docker-image.sh
 ```
