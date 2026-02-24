@@ -1,12 +1,6 @@
-# abstracore
+# abstrassist
 
-----
-FIRST: check that the file `.git/hooks/pre-commit` exists and is executable. If not, move the script `copy_to_.git_hooks_pre-commit` to there.
-
-THEN: read more below.
-----
-
-**abstracore** is the master blueprint for abstratium applications. Built on the Quarkus subatomic Java stack, Quinoa for seamless integration, and Angular for the frontend, it serves as the upstream source for all specific project forks.
+**abstrassist** is an application that provides AI-powered assistance. Built on the Quarkus subatomic Java stack, Quinoa for seamless integration, and Angular for the frontend, it serves as the upstream source for all specific project forks.
 
 ## 📦 Tech Stack
 
@@ -22,56 +16,11 @@ Data: Designed for MySql compatibility
 
 ## 🛠️ Getting Started
 
-1. Creating a New Project from Abstracore
-
-To start a new project (e.g., abstradex) using this core:
-
-Create a new empty repository on your Git server.
-
-Clone Abstracore and point it to your new origin:
-
-```bash
-git clone https://github.com/abstratium-dev/abstracore.git your-new-project
-cd your-new-project
-git remote rename origin upstream
-git remote add origin git@github.com:your-org/your-new-project.git
-git push -u origin main
-```
-
-2. Pulling Baseline Updates
-
-When Abstracore is updated with new features or security patches, pull those changes into your project fork using the provided sync script:
+This project is based on the Abstracore template. To sync with baseline updates from Abstracore:
 
 ```bash
 # From the project root, run the sync script
 bash scripts/sync-base.sh
-```
-
-The script will:
-- Add the `upstream` remote if it doesn't exist (pointing to Abstracore)
-- Fetch the latest changes from Abstracore
-- Merge the baseline changes into your project
-- Pause before committing so you can review the changes
-
-**Manual Alternative:**
-
-If you prefer to sync manually:
-
-```bash
-# Ensure you are on your main branch
-git checkout main
-
-# Add upstream remote (only needed once)
-git remote add upstream git@github.com:abstratium-dev/abstracore.git
-
-# Fetch the latest baseline code
-git fetch upstream
-
-# Merge baseline changes into your project
-git merge upstream/main --no-commit --no-ff
-
-# Review changes, then commit
-git commit -m "Merge baseline updates from Abstracore"
 ```
 
 ⚠️ **IMPORTANT**: Avoid modifying the `/core` directory in your project forks. Keep your custom logic in `/app` or specific feature packages to minimize merge conflicts during updates.
@@ -93,11 +42,11 @@ Run the following command to start Quarkus in Dev Mode with the Angular live-rel
 ```bash
 ./mvnw quarkus:dev
 ```
-Backend: http://localhost:808x
+Backend: http://localhost:8084
 
 Frontend: Automatically proxied by Quinoa
 
-Dev UI: http://localhost:808x/q/dev
+Dev UI: http://localhost:8084/q/dev
 
 ## 📝 Governance
 
@@ -158,15 +107,7 @@ Background Color: #5c6bc0
 
 # Things to do when creating a new project
 
-- [ ] - decide on a new port number for this service and change it
-  - in `proxy.conf.json`
   - and all the TODO comments that tell you to do that 
-  - and all the places that use 
-    - `808x`
-    - `900x`
-    - `420x`
-  - in `package.json` of `src/main/webui` where it tells `ng serve` which port number to use
-    - `"start": "ng serve --proxy-config proxy.conf.json --port=4201",` <<< THERE!
 - [ ] - Use the prompt below, to get an LLM to do this
 - [ ] - Search for TODO and fix
 - [ ] - Search for core and fix, e.g. in `pom.xml`

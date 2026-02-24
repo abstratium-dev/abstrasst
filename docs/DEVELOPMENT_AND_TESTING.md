@@ -55,9 +55,7 @@ docker run -d \
 # create the database and user
 docker run -it --rm --network abstratium mysql mysql -h abstratium-mysql --port 3306 -u root -psecret
 
-TODO change `abstracore` to the actual database name, in all of the statements below
-
-DROP USER IF EXISTS 'abstracore'@'%';
+DROP USER IF EXISTS 'abstrassist'@'%';
 
 CREATE USER 'abstracore'@'%' IDENTIFIED BY 'secret';
 
@@ -176,7 +174,7 @@ Ensure that `mvn verify` is successful.
 
 Start `quarkus dev`
 
-(Alternatively, don't start quarkus or the client example, and set `BASE_URL=http://localhost:808x` in the command line after ALLOW_SIGNUP)
+(Alternatively, don't start quarkus or the client example, and set `BASE_URL=http://localhost:8084` in the command line after ALLOW_SIGNUP)
 
 Run `npx playwright test --ui` in the `e2e-tests` directory.
 
