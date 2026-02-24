@@ -9,11 +9,11 @@
 
 First add env vars:
 
-    source /w/abstratium-TODO.env
+    source /w/abstratium-abstrasst.env
 
 That file should contain:
 
-    export ABSTRATIUM_CLIENT_ID="abstratium-TODO"
+    export ABSTRATIUM_CLIENT_ID="abstratium-abstrasst"
     export ABSTRATIUM_CLIENT_SECRET="... (taken from the abstrauth application)"
     export CSRF_TOKEN_SIGNATURE_KEY="... (generated with `openssl rand -base64 64 | tr -d '\n'`)"
     export COOKIE_ENCRYPTION_SECRET="... (generated with `openssl rand -base64 32`)"
@@ -55,14 +55,14 @@ docker run -d \
 # create the database and user
 docker run -it --rm --network abstratium mysql mysql -h abstratium-mysql --port 3306 -u root -psecret
 
-DROP USER IF EXISTS 'abstrassist'@'%';
+DROP USER IF EXISTS 'abstrasst'@'%';
 
-CREATE USER 'abstracore'@'%' IDENTIFIED BY 'secret';
+CREATE USER 'abstrasst'@'%' IDENTIFIED BY 'secret';
 
-DROP DATABASE IF EXISTS abstracore;
+DROP DATABASE IF EXISTS abstrasst;
 
-CREATE DATABASE abstracore CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
-GRANT ALL PRIVILEGES ON abstracore.* TO abstracore@'%'; -- on own database
+CREATE DATABASE abstrasst CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+GRANT ALL PRIVILEGES ON abstrasst.* TO abstrasst@'%'; -- on own database
 
 FLUSH PRIVILEGES;
 ```
@@ -70,7 +70,7 @@ FLUSH PRIVILEGES;
 exit, then reconnect using the new user:
 
 ```bash
-docker run -it --network abstratium --rm mysql mysql -h abstratium-mysql --port 3306 -u TODO -psecret TODO
+docker run -it --network abstratium --rm mysql mysql -h abstratium-mysql --port 3306 -u abstrasst -psecret abstrasst
 ```
 
 # Authorization
@@ -99,7 +99,7 @@ It might be easier to test these manually during testing.
 
 Start the component:
 ```bash
-source /w/abstratium-TODO.env
+source /w/abstratium-abstrasst.env
 quarkus dev
 ```
 
@@ -156,7 +156,7 @@ ng update
 ng update @angular/cli @angular/core
 ```
 
-5. Check Github for security problems by signing in and viewing the problems here: https://github.com/abstratium-dev/TODO/security/dependabot and https://github.com/abstratium-dev/TODO/security/code-scanning
+5. Check Github for security problems by signing in and viewing the problems here: https://github.com/abstratium-dev/abstrasst/security/dependabot and https://github.com/abstratium-dev/abstrasst/security/code-scanning
 
 # Issues with Webkit
 

@@ -16,19 +16,18 @@ This component requires a MySQL database. Create a database and user with the fo
 1. **Connect to MySQL** as root or admin user:
 
 (change `<password>` to your password)
-(change `<TODO>` to the project name)
 
 ```bash
 docker run -it --rm --network abstratium mysql mysql -h abstratium-mysql --port 3306 -u root -p<password>
 
-DROP USER IF EXISTS 'TODO'@'%';
+DROP USER IF EXISTS 'abstrasst'@'%';
 
-CREATE USER 'TODO'@'%' IDENTIFIED BY '<password>';
+CREATE USER 'abstrasst'@'%' IDENTIFIED BY '<password>';
 
-DROP DATABASE IF EXISTS TODO;
+DROP DATABASE IF EXISTS abstrasst;
 
-CREATE DATABASE TODO CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
-GRANT ALL PRIVILEGES ON TODO.* TO TODO@'%'; -- on own database
+CREATE DATABASE abstrasst CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+GRANT ALL PRIVILEGES ON abstrasst.* TO abstrasst@'%'; -- on own database
 
 FLUSH PRIVILEGES;
 
@@ -53,7 +52,7 @@ TODO any env vars that need generating are to be described here.
 
 1. **Pull the latest image** from GitHub Container Registry:
    ```bash
-   docker pull ghcr.io/abstratium-dev/TODO:latest
+   docker pull ghcr.io/abstratium-dev/abstrasst:latest
    ```
 
 2. **Run the container**:
@@ -62,7 +61,7 @@ _Replace all `TODO_...` values with the values generated above.
 
    ```bash
    docker run -d \
-     --name TODO \
+     --name abstrasst \
      --network your-network \
      -p 127.0.0.1:41084:8084 \
      -p 127.0.0.1:9006:9006 \
@@ -70,7 +69,7 @@ _Replace all `TODO_...` values with the values generated above.
      -e QUARKUS_DATASOURCE_USERNAME="TODO_YOUR_USERNAME" \
      -e QUARKUS_DATASOURCE_PASSWORD="TODO_YOUR_SECURE_PASSWORD" \
      -e COOKIE_ENCRYPTION_SECRET="TODO_YOUR_COOKIE_ENCRYPTION_SECRET" \
-     ghcr.io/abstratium-dev/TODO:latest
+     ghcr.io/abstratium-dev/abstrasst:latest
    ```
 
    **Required Environment Variables:**
@@ -86,7 +85,7 @@ _Replace all `TODO_...` values with the values generated above.
 3. **Verify the container is running**:
    ```bash
    docker ps
-   docker logs TODO
+   docker logs abstrasst
    curl http://localhost:41084/m/health
    curl http://localhost:41084/m/info
    ```
@@ -134,14 +133,14 @@ This project provides several endpoints for monitoring:
 
 ### Container won't start
 
-1. Check Docker logs: `docker logs TODO`
+1. Check Docker logs: `docker logs abstrasst`
 2. Verify environment variables are set correctly
 3. Ensure database is accessible from container
 4. Check network connectivity: `docker network inspect your-network`
 
 ### Database connection errors
 
-1. Verify MySQL is running: `mysql -u TODO -p -h your-mysql-host`
+1. Verify MySQL is running: `mysql -u abstrasst -p -h your-mysql-host`
 2. Check firewall rules allow connection on port 3306
 3. Verify database user has correct permissions
 4. Check JDBC URL format is correct

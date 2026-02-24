@@ -2,9 +2,9 @@ import { expect, Page } from '@playwright/test';
 
 // TODO: rename this file
 
-// TODO: Replace with actual element selectors
+// Replace with actual element selectors
 
-// TODO: create functions for doing things on pages, e.g.:
+// Create functions for doing things on pages, e.g.:
 /**
  * Adds a new OAuth client.
  * Assumes we're already on the clients page.

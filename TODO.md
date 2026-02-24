@@ -12,6 +12,11 @@ These TODOs are to be resolved by the developer, NOT THE LLM.
 
 ## Tomorrow
 
+- [ ] Update DATABASE.md with project-specific information
+- [ ] remove all references to `demo` in the entire project
+- [ ] remove all files with `demo` in their name
+- [ ] Search for TODO and fix
+
 
 ## Later (not yet necessary for initial release)
 
