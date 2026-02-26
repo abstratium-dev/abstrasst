@@ -106,6 +106,10 @@
             <artifactId>quarkus-langchain4j-openai</artifactId>
         </dependency>
         <dependency>
+            <groupId>io.quarkiverse.langchain4j</groupId>
+            <artifactId>quarkus-langchain4j-agentic</artifactId>
+        </dependency>
+        <dependency>
             <groupId>io.quarkus</groupId>
             <artifactId>quarkus-junit</artifactId>
             <scope>test</scope>
@@ -156,6 +160,10 @@
             <version>${quarkus.resteasy.problem.version}</version>
         </dependency>
         <dependency>
+            <groupId>io.quarkus</groupId>
+            <artifactId>quarkus-smallrye-fault-tolerance</artifactId>
+        </dependency>
+        <dependency>
             <groupId>org.wiremock</groupId>
             <artifactId>wiremock-standalone</artifactId>
             <version>3.9.2</version>
@@ -178,7 +186,6 @@
             </resource>
             <resource>
                 <directory>src/main/resources</directory>
-                <filtering>false</filtering>
                 <excludes>
                     <exclude>application.properties</exclude>
                 </excludes>

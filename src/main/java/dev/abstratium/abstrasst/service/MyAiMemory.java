@@ -15,7 +15,8 @@ public class MyAiMemory implements ChatMemoryProvider {
 
     @Override
     public ChatMemory get(Object memoryId) {
-        return memories.computeIfAbsent(memoryId.toString(), id -> MessageWindowChatMemory.withMaxMessages(10));
+        // or see https://docs.quarkiverse.io/quarkus-langchain4j/dev/guide-semantic-compression.html
+        return memories.computeIfAbsent(memoryId.toString(), id -> MessageWindowChatMemory.builder().maxMessages(10).build());
     }
 
 }
